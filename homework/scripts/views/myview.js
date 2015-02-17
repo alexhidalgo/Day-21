@@ -4,7 +4,7 @@ var AppView = Backbone.View.extend({
     console.log(ProjectsCollection);
     this.projects = new ProjectsCollection();
 
-    this.homeView = new HomeView({
+    this.menuView = new HomeView({
       projects: this.projects
     });
     this.resumeView = new ResumeView({
@@ -22,16 +22,16 @@ var AppView = Backbone.View.extend({
 
     var Router = Backbone.Router.extend({
       routes: {
-        'home':   'home',
+        'menu':   'menu',
         'resume':   'resume',
         'projects': 'projects',
         'admin':  'admin'
       },
 
-      home: function() {
-        console.log('home');
+      menu: function() {
+        console.log('menu');
         self.hideAllPages();
-        self.homeView.$el.show();
+        self.menuView.$el.show();
       },
 
       resume: function() {

@@ -1,5 +1,5 @@
 var HomeView = Backbone.View.extend({
-	el: '#home-view',
+	el: '#menu-view',
 	initialize: function(options) {
 		_.bindAll(
 			this,

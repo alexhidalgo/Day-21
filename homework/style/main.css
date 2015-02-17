@@ -9,3 +9,17 @@
 #admin-view {
 	background-color: red;
 }
+
+.menu-btn {
+	display: block;
+	margin: 0 auto;
+	margin-top: 3em;
+	border-radius: 5px;
+}
+
+#menu-view {
+}
+
+h1 {
+	text-align: center;
+}
