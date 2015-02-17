@@ -10,10 +10,10 @@ var AppView = Backbone.View.extend({
     this.gameView = new GameView({
       projects: this.projects
     });
-    this.adminView = new AdminView({
+    this.settingsView = new SettingsView({
       projects: this.projects
     });
-    this.projectsView = new ProjectsView({
+    this.leaderboardView = new LeaderboardView({
       projects: this.projects
     });
 
@@ -24,8 +24,8 @@ var AppView = Backbone.View.extend({
       routes: {
         'menu':   'menu',
         'game':   'game',
-        'projects': 'projects',
-        'admin':  'admin'
+        'leaderboard': 'leaderboard',
+        'settings':  'settings'
       },
 
       menu: function() {
@@ -39,14 +39,14 @@ var AppView = Backbone.View.extend({
         self.gameView.$el.show();
       },
 
-      projects: function() {
+      leaderboard: function() {
         self.hideAllPages();
-        self.projectsView.$el.show();
+        self.leaderboardView.$el.show();
       },
 
-      admin: function() {
+      settings: function() {
         self.hideAllPages();
-        self.adminView.$el.show();
+        self.settingsView.$el.show();
       }
     });
 

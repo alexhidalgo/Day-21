@@ -12,7 +12,7 @@
 		<nav id="navigation">
 			<a href="#menu">Menu</a>
 			<a href="#game">Game</a>
-			<a href="#projects">Projects</a>
+			<a href="#leaderboard">Leader Board</a>
 			<a href="#admin">Admin</a>
 		</nav>
 		<main id="app">
@@ -21,8 +21,8 @@
 				<button class="menu-btn">Play</button>
 				<button class="menu-btn">Leaderboard</button>
 				<button class="menu-btn">setting</button>
-				<div id="recent-project">
-					My most recent project is <a href="#" id="recent-project-name"></a>
+				<div id="recent-leaderboard">
+					My most recent project is <a href="#" id="recent-leaderboard-name"></a>
 				</div>
 				<div id="current-position">
 					My current position is <span id="current-position-name"></span>
@@ -34,35 +34,18 @@
 
 				</div>
 			</div>
-			<div class="page-view" id="projects-view">
-				<h1>Projects</h1>
-				<div id="project-list"></div>
+			<div class="page-view" id="leaderboard-view">
+				<h1>Leaderboard</h1>
 			</div>
-			<div class="page-view" id="admin-view">
-				<h1>Admin</h1>
-				<div class="form">
-					<h2>Add New Project</h2>
-					<label>
-						Name:
-						<input type="text" id="project-name">
-					</label>
-					<label>
-						URL:
-						<input type="url" id="project-url">
-					</label>
-					<label>
-						Description:
-						<textarea id="project-description">
-						</textarea>
-					</label>
-					<button type="button" id="add-project-button">Add Project</button>
-				</div>
+
+			<div class="page-view" id="settings-view">
+				<h1>Settings</h1>
 			</div>
 		</main>
 
 
 		<!-- This is my template -->
-		<script type="text/html" id="project-template">
+		<script type="text/html" id="leaderboard-template">
 			<div class="project">
 				<h3>
 					<a href="<%= url %>"><%= name %></a>
@@ -86,8 +69,8 @@
 		<script src="scripts/views/individualProjectView.js"></script>
 		<script src="scripts/views/menuView.js"></script>
 		<script src="scripts/views/gameView.js"></script>
-		<script src="scripts/views/projectsView.js"></script>
-		<script src="scripts/views/adminView.js"></script>
+		<script src="scripts/views/leaderboardView.js"></script>
+		<script src="scripts/views/settingsView.js"></script>
 		<script src="scripts/views/myview.js"></script>
 
 		<script src="scripts/main.js"></script>

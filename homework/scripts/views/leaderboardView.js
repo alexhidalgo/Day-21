@@ -1,5 +1,5 @@
-var ProjectsView = Backbone.View.extend({
-	el: '#projects-view',
+var LeaderboardView = Backbone.View.extend({
+	el: '#leaderboard-view',
 	initialize: function(options) {
 		_.bindAll(
 			this,

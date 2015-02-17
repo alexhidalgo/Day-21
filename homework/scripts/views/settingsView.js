@@ -1,5 +1,5 @@
-var AdminView = Backbone.View.extend({
-	el: '#admin-view',
+var SettingsView = Backbone.View.extend({
+	el: '#settings-view',
 	initialize: function(options) {
 		_.bindAll(
 			this,
