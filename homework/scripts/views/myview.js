@@ -16,6 +16,9 @@ var AppView = Backbone.View.extend({
     this.leaderboardView = new LeaderboardView({
       projects: this.projects
     });
+    this.loadingView = new LoadingView({
+      projects: this.projects
+    });
 
     var self = this;
     console.log(this.projects);
@@ -25,7 +28,8 @@ var AppView = Backbone.View.extend({
         'menu':   'menu',
         'game':   'game',
         'leaderboard': 'leaderboard',
-        'settings':  'settings'
+        'settings':  'settings',
+        'loading': 'loading'
       },
 
       menu: function() {
@@ -50,6 +54,12 @@ var AppView = Backbone.View.extend({
         console.log('settings');
         self.hideAllPages();
         self.settingsView.$el.show();
+      },
+
+      loading: function() {
+        console.log('loading');
+        self.hideAllPages();
+        self.loadingView.$el.show();
       }
     });
 
