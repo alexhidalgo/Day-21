@@ -35,16 +35,19 @@ var AppView = Backbone.View.extend({
       },
 
       game: function() {
+        console.log('game');
         self.hideAllPages();
         self.gameView.$el.show();
       },
 
       leaderboard: function() {
+        console.log('leaderboard');
         self.hideAllPages();
         self.leaderboardView.$el.show();
       },
 
       settings: function() {
+        console.log('settings');
         self.hideAllPages();
         self.settingsView.$el.show();
       }
