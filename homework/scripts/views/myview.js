@@ -4,10 +4,10 @@ var AppView = Backbone.View.extend({
     console.log(ProjectsCollection);
     this.projects = new ProjectsCollection();
 
-    this.menuView = new HomeView({
+    this.menuView = new MenuView({
       projects: this.projects
     });
-    this.gameView = new ResumeView({
+    this.gameView = new GameView({
       projects: this.projects
     });
     this.adminView = new AdminView({
