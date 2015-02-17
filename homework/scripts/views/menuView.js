@@ -5,14 +5,6 @@ var MenuView = Backbone.View.extend({
 			this,
 			'render'
 		);
-		// this.$currentPosition = this.$el.find('#current-position');
-		// this.$recentProject = this.$el.find('#recent-project');
-		// this.$recentProjectName = this.$el.find('#recent-project-name');
-
-		// this.projects = options.projects;
-		// this.projects.on('add', this.render);
-
-		// this.render();
 	},
 
 	render: function() {

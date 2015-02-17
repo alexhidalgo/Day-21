@@ -1,8 +1,46 @@
 var AppView = Backbone.View.extend({
   el: '#app',
   initialize: function() {
-    console.log(ProjectsCollection);
+
+    var self = this;
+    var Router = Backbone.Router.extend({
+      routes: {
+
+        'menu':   'menu',
+        'game':   'game',
+        'leaderboard': 'leaderboard',
+        'settings':  'settings',
+        '*loading': 'loading'
+      },
+
+      loading: function() {
+        self.hideAllPages();
+        self.loadingView.$el.show();
+      },
+
+      menu: function() {
+        self.hideAllPages();
+        self.menuView.$el.show();
+      },
+
+      game: function() {
+        self.hideAllPages();
+        self.gameView.$el.show();
+      },
+
+      leaderboard: function() {
+        self.hideAllPages();
+        self.leaderboardView.$el.show();
+      },
+
+      settings: function() {
+        self.hideAllPages();
+        self.settingsView.$el.show();
+      }
+    });
+
     this.projects = new ProjectsCollection();
+    this.appRouter = new Router();
 
     this.menuView = new MenuView({
       projects: this.projects
@@ -17,53 +55,8 @@ var AppView = Backbone.View.extend({
       projects: this.projects
     });
     this.loadingView = new LoadingView({
-      projects: this.projects
+      router: this.appRouter
     });
-
-    var self = this;
-    console.log(this.projects);
-
-    var Router = Backbone.Router.extend({
-      routes: {
-        'menu':   'menu',
-        'game':   'game',
-        'leaderboard': 'leaderboard',
-        'settings':  'settings',
-        'loading': 'loading'
-      },
-
-      menu: function() {
-        console.log('menu');
-        self.hideAllPages();
-        self.menuView.$el.show();
-      },
-
-      game: function() {
-        console.log('game');
-        self.hideAllPages();
-        self.gameView.$el.show();
-      },
-
-      leaderboard: function() {
-        console.log('leaderboard');
-        self.hideAllPages();
-        self.leaderboardView.$el.show();
-      },
-
-      settings: function() {
-        console.log('settings');
-        self.hideAllPages();
-        self.settingsView.$el.show();
-      },
-
-      loading: function() {
-        console.log('loading');
-        self.hideAllPages();
-        self.loadingView.$el.show();
-      }
-    });
-
-    var appRouter = new Router();
 
     Backbone.history.start();
   },
