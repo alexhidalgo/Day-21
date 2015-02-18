@@ -5,7 +5,6 @@ var AppView = Backbone.View.extend({
     var self = this;
     var Router = Backbone.Router.extend({
       routes: {
-
         'menu':   'menu',
         'game':   'game',
         'leaderboard': 'leaderboard',
@@ -39,21 +38,12 @@ var AppView = Backbone.View.extend({
       }
     });
 
-    this.projects = new ProjectsCollection();
     this.appRouter = new Router();
 
-    this.menuView = new MenuView({
-      projects: this.projects
-    });
-    this.gameView = new GameView({
-      projects: this.projects
-    });
-    this.settingsView = new SettingsView({
-      projects: this.projects
-    });
-    this.leaderboardView = new LeaderboardView({
-      projects: this.projects
-    });
+    this.menuView = new MenuView();
+    this.gameView = new GameView();
+    this.settingsView = new SettingsView();
+    this.leaderboardView = new LeaderboardView();
     this.loadingView = new LoadingView({
       router: this.appRouter
     });
