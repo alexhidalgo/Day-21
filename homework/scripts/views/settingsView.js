@@ -5,7 +5,8 @@ var SettingsView = Backbone.View.extend({
 			this,
 			'onAddProject'
 		);
-		this.projects = options.projects;
+		// console.log(options);
+		// this.projects = options.projects;
 
 		this.$name = this.$el.find('#project-name');
 		this.$url = this.$el.find('#project-url');
